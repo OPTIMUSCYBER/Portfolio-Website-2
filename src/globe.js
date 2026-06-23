@@ -20,9 +20,10 @@ const GLOBE_R  = 6;
 
 export function initGlobe() {
   const globeGroup = new THREE.Group();
+  const isMobile = window.innerWidth < 768;
 
   // ─── 1. EARTH SPHERE WITH NIGHT TEXTURE ───────────────────────
-  const sphereGeo = new THREE.SphereGeometry(GLOBE_R, 64, 64);
+  const sphereGeo = new THREE.SphereGeometry(GLOBE_R, isMobile ? 32 : 64, isMobile ? 32 : 64);
 
   // Load NASA-style night earth texture — shows continents via city lights
   const loader = new THREE.TextureLoader();
@@ -56,7 +57,7 @@ export function initGlobe() {
   );
 
   // ─── 2. NETWORK GRID OVERLAY ──────────────────────────────────
-  const wireGeo = new THREE.SphereGeometry(GLOBE_R + 0.04, 36, 36);
+  const wireGeo = new THREE.SphereGeometry(GLOBE_R + 0.04, isMobile ? 24 : 36, isMobile ? 24 : 36);
   const wireMat = new THREE.MeshBasicMaterial({
     color: ACCENT,
     wireframe: true,
@@ -67,7 +68,7 @@ export function initGlobe() {
   globeGroup.add(wireframe);
 
   // ─── 3. NETWORK NODES (Fibonacci sphere) ──────────────────────
-  const NODE_COUNT = 600;
+  const NODE_COUNT = isMobile ? 300 : 600;
   const nodePositions = new Float32Array(NODE_COUNT * 3);
   const nodeVectors = [];
 
@@ -100,7 +101,7 @@ export function initGlobe() {
   globeGroup.add(nodesMesh);
 
   // ─── 4. MOVING DATA PACKETS ───────────────────────────────────
-  const PACKET_COUNT = 80;
+  const PACKET_COUNT = isMobile ? 30 : 80;
   const packetGeo = new THREE.BufferGeometry();
   const packetPos = new Float32Array(PACKET_COUNT * 3);
   const packetProgress = new Float32Array(PACKET_COUNT);
@@ -149,34 +150,39 @@ export function initGlobe() {
     ring.userData = { speed: cfg.speed };
     globeGroup.add(ring);
 
-    // Trail ghost 1 (motion blur)
-    const trailGeo1 = new THREE.TorusGeometry(cfg.radius, 0.008, 8, 180);
-    const trailMat1 = new THREE.MeshBasicMaterial({
-      color: ACCENT, transparent: true, opacity: 0.08, blending: THREE.AdditiveBlending,
-    });
-    const trail1 = new THREE.Mesh(trailGeo1, trailMat1);
-    trail1.rotation.x = cfg.tiltX;
-    trail1.rotation.z = cfg.tiltZ;
-    trail1.userData = { speed: cfg.speed * 0.98 }; // Slightly lagging
-    globeGroup.add(trail1);
+    if (!isMobile) {
+      // Trail ghost 1 (motion blur)
+      const trailGeo1 = new THREE.TorusGeometry(cfg.radius, 0.008, 8, 180);
+      const trailMat1 = new THREE.MeshBasicMaterial({
+        color: ACCENT, transparent: true, opacity: 0.08, blending: THREE.AdditiveBlending,
+      });
+      const trail1 = new THREE.Mesh(trailGeo1, trailMat1);
+      trail1.rotation.x = cfg.tiltX;
+      trail1.rotation.z = cfg.tiltZ;
+      trail1.userData = { speed: cfg.speed * 0.98 }; // Slightly lagging
+      globeGroup.add(trail1);
 
-    // Trail ghost 2 (deeper blur)
-    const trailGeo2 = new THREE.TorusGeometry(cfg.radius, 0.006, 8, 180);
-    const trailMat2 = new THREE.MeshBasicMaterial({
-      color: ACCENT, transparent: true, opacity: 0.04, blending: THREE.AdditiveBlending,
-    });
-    const trail2 = new THREE.Mesh(trailGeo2, trailMat2);
-    trail2.rotation.x = cfg.tiltX;
-    trail2.rotation.z = cfg.tiltZ;
-    trail2.userData = { speed: cfg.speed * 0.95 }; // More lag
-    globeGroup.add(trail2);
+      // Trail ghost 2 (deeper blur)
+      const trailGeo2 = new THREE.TorusGeometry(cfg.radius, 0.006, 8, 180);
+      const trailMat2 = new THREE.MeshBasicMaterial({
+        color: ACCENT, transparent: true, opacity: 0.04, blending: THREE.AdditiveBlending,
+      });
+      const trail2 = new THREE.Mesh(trailGeo2, trailMat2);
+      trail2.rotation.x = cfg.tiltX;
+      trail2.rotation.z = cfg.tiltZ;
+      trail2.userData = { speed: cfg.speed * 0.95 }; // More lag
+      globeGroup.add(trail2);
 
-    return [ring, trail1, trail2];
+      return [ring, trail1, trail2];
+    }
+
+    return [ring];
   });
 
   // ─── 6. ATMOSPHERIC GLOW (multi-layer) ────────────────────────
   // Inner atmosphere (tight hug)
-  const atmosGeo1 = new THREE.SphereGeometry(GLOBE_R + 0.3, 64, 64);
+  const atmosSegs = isMobile ? 32 : 64;
+  const atmosGeo1 = new THREE.SphereGeometry(GLOBE_R + 0.3, atmosSegs, atmosSegs);
   const atmosMat1 = new THREE.MeshBasicMaterial({
     color: ACCENT, transparent: true, opacity: 0.12,
     blending: THREE.AdditiveBlending, side: THREE.BackSide,
@@ -184,7 +190,7 @@ export function initGlobe() {
   globeGroup.add(new THREE.Mesh(atmosGeo1, atmosMat1));
 
   // Mid atmosphere (reflection glow)
-  const atmosGeo2 = new THREE.SphereGeometry(GLOBE_R + 1.2, 64, 64);
+  const atmosGeo2 = new THREE.SphereGeometry(GLOBE_R + 1.2, atmosSegs, atmosSegs);
   const atmosMat2 = new THREE.MeshBasicMaterial({
     color: ACCENT, transparent: true, opacity: 0.04,
     blending: THREE.AdditiveBlending, side: THREE.BackSide,
@@ -192,7 +198,7 @@ export function initGlobe() {
   globeGroup.add(new THREE.Mesh(atmosGeo2, atmosMat2));
 
   // Outer atmosphere (soft fade into space)
-  const atmosGeo3 = new THREE.SphereGeometry(GLOBE_R + 2.5, 64, 64);
+  const atmosGeo3 = new THREE.SphereGeometry(GLOBE_R + 2.5, atmosSegs, atmosSegs);
   const atmosMat3 = new THREE.MeshBasicMaterial({
     color: ACCENT, transparent: true, opacity: 0.015,
     blending: THREE.AdditiveBlending, side: THREE.BackSide,
@@ -223,47 +229,49 @@ export function initGlobe() {
   glowSprite1.position.set(0, 0, -5);
   globeGroup.add(glowSprite1);
 
-  // Secondary ultra-wide ambient glow
-  const canvas2 = document.createElement('canvas');
-  canvas2.width = 256;
-  canvas2.height = 256;
-  const ctx2 = canvas2.getContext('2d');
-  const grad2 = ctx2.createRadialGradient(128, 128, 0, 128, 128, 128);
-  grad2.addColorStop(0, 'rgba(127, 219, 255, 0.015)');
-  grad2.addColorStop(0.5, 'rgba(127, 219, 255, 0.0035)');
-  grad2.addColorStop(1, 'rgba(127, 219, 255, 0)');
-  ctx2.fillStyle = grad2;
-  ctx2.fillRect(0, 0, 256, 256);
+  // Secondary ultra-wide ambient glow (skip on mobile)
+  if (!isMobile) {
+    const canvas2 = document.createElement('canvas');
+    canvas2.width = 256;
+    canvas2.height = 256;
+    const ctx2 = canvas2.getContext('2d');
+    const grad2 = ctx2.createRadialGradient(128, 128, 0, 128, 128, 128);
+    grad2.addColorStop(0, 'rgba(127, 219, 255, 0.015)');
+    grad2.addColorStop(0.5, 'rgba(127, 219, 255, 0.0035)');
+    grad2.addColorStop(1, 'rgba(127, 219, 255, 0)');
+    ctx2.fillStyle = grad2;
+    ctx2.fillRect(0, 0, 256, 256);
 
-  const spriteTex2 = new THREE.CanvasTexture(canvas2);
-  const spriteMat2 = new THREE.SpriteMaterial({
-    map: spriteTex2, color: ACCENT, transparent: true, blending: THREE.AdditiveBlending,
-  });
-  const glowSprite2 = new THREE.Sprite(spriteMat2);
-  glowSprite2.scale.set(30, 30, 1);
-  glowSprite2.position.set(0, 0, -8);
-  globeGroup.add(glowSprite2);
+    const spriteTex2 = new THREE.CanvasTexture(canvas2);
+    const spriteMat2 = new THREE.SpriteMaterial({
+      map: spriteTex2, color: ACCENT, transparent: true, blending: THREE.AdditiveBlending,
+    });
+    const glowSprite2 = new THREE.Sprite(spriteMat2);
+    glowSprite2.scale.set(30, 30, 1);
+    glowSprite2.position.set(0, 0, -8);
+    globeGroup.add(glowSprite2);
 
-  // ─── GLOBE REFLECTION GLOW (illuminates nearby space below) ──
-  const canvas3 = document.createElement('canvas');
-  canvas3.width = 256;
-  canvas3.height = 256;
-  const ctx3 = canvas3.getContext('2d');
-  const grad3 = ctx3.createRadialGradient(128, 128, 0, 128, 128, 128);
-  grad3.addColorStop(0, 'rgba(127, 219, 255, 0.035)');
-  grad3.addColorStop(0.6, 'rgba(127, 219, 255, 0.007)');
-  grad3.addColorStop(1, 'rgba(127, 219, 255, 0)');
-  ctx3.fillStyle = grad3;
-  ctx3.fillRect(0, 0, 256, 256);
+    // ─── GLOBE REFLECTION GLOW (illuminates nearby space below) ──
+    const canvas3 = document.createElement('canvas');
+    canvas3.width = 256;
+    canvas3.height = 256;
+    const ctx3 = canvas3.getContext('2d');
+    const grad3 = ctx3.createRadialGradient(128, 128, 0, 128, 128, 128);
+    grad3.addColorStop(0, 'rgba(127, 219, 255, 0.035)');
+    grad3.addColorStop(0.6, 'rgba(127, 219, 255, 0.007)');
+    grad3.addColorStop(1, 'rgba(127, 219, 255, 0)');
+    ctx3.fillStyle = grad3;
+    ctx3.fillRect(0, 0, 256, 256);
 
-  const reflectTex = new THREE.CanvasTexture(canvas3);
-  const reflectMat = new THREE.SpriteMaterial({
-    map: reflectTex, color: ACCENT, transparent: true, blending: THREE.AdditiveBlending,
-  });
-  const reflectSprite = new THREE.Sprite(reflectMat);
-  reflectSprite.scale.set(14, 7, 1);
-  reflectSprite.position.set(0, -6, 0);
-  globeGroup.add(reflectSprite);
+    const reflectTex = new THREE.CanvasTexture(canvas3);
+    const reflectMat = new THREE.SpriteMaterial({
+      map: reflectTex, color: ACCENT, transparent: true, blending: THREE.AdditiveBlending,
+    });
+    const reflectSprite = new THREE.Sprite(reflectMat);
+    reflectSprite.scale.set(14, 7, 1);
+    reflectSprite.position.set(0, -6, 0);
+    globeGroup.add(reflectSprite);
+  }
 
   // ─── 8. PULSE WAVE (Scan Ring) ────────────────────────────────
   const pulseGeo = new THREE.RingGeometry(GLOBE_R + 0.1, GLOBE_R + 0.2, 64);
@@ -292,6 +300,7 @@ export function initGlobe() {
 
   // ─── UPDATE FUNCTION (called every frame) ─────────────────────
   let pulseTimer = 0;
+  const _tempVec = new THREE.Vector3();
 
   globeGroup.userData.update = (time) => {
     // Pulsing nodes (3-5 second cycle)
@@ -323,7 +332,7 @@ export function initGlobe() {
 
       // Spherical lerp — normalize to sphere surface
       const p = packetProgress[i];
-      const pos = new THREE.Vector3()
+      const pos = _tempVec
         .copy(packetPaths[i].start)
         .lerp(packetPaths[i].end, p)
         .normalize()

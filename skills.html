@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://unpkg.com https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formsubmit.co https://unpkg.com; frame-src 'self';">
+    <meta name="description" content="Harsh — Cybersecurity Researcher & Security Tool Developer. Explore my skills and technical expertise." />
+    <title>Harsh | Skills & Expertise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body>
+    <!-- Three.js Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+      <div class="logo">H</div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html" class="active">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Skills & Expertise Section -->
+    <section class="skills-section" id="skills" style="padding-top: 100px; min-height: 100vh;">
+      <!-- Section Atmosphere -->
+      <div class="skills-atmosphere">
+        <div class="atmosphere-haze"></div>
+        <div class="atmosphere-grid"></div>
+        <div class="skills-particles">
+          <div class="s-particle p1"></div>
+          <div class="s-particle p2"></div>
+          <div class="s-particle p3"></div>
+          <div class="s-particle p4"></div>
+          <div class="s-particle p5"></div>
+        </div>
+      </div>
+
+      <div class="skills-inner">
+        <div class="section-header">
+          <div class="section-header-left">
+            <!-- Radar Visualization Background -->
+            <div class="radar-bg">
+              <svg width="100%" height="100%" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="30" fill="none" stroke="var(--accent-blue)" stroke-width="0.5" stroke-dasharray="2 3" />
+                <circle cx="100" cy="100" r="60" fill="none" stroke="var(--accent-blue)" stroke-width="0.5" stroke-opacity="0.5" />
+                <circle cx="100" cy="100" r="90" fill="none" stroke="var(--accent-blue)" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="4 4" />
+                <line x1="100" y1="10" x2="100" y2="190" stroke="var(--accent-blue)" stroke-width="0.25" stroke-opacity="0.2" />
+                <line x1="10" y1="100" x2="190" y2="100" stroke="var(--accent-blue)" stroke-width="0.25" stroke-opacity="0.2" />
+                <circle cx="50" cy="60" r="2.5" fill="var(--accent-blue)" class="radar-node-pulse-1" />
+                <circle cx="140" cy="70" r="2" fill="var(--accent-blue)" class="radar-node-pulse-2" />
+                <circle cx="70" cy="150" r="3" fill="var(--accent-blue)" class="radar-node-pulse-3" />
+                <circle cx="160" cy="130" r="1.5" fill="var(--accent-blue)" class="radar-node-pulse-4" />
+                <line x1="100" y1="100" x2="100" y2="10" stroke="var(--accent-blue)" stroke-width="0.75" stroke-opacity="0.6" class="radar-sweep" />
+              </svg>
+            </div>
+            <span class="section-label">Capabilities</span>
+            <h2 class="section-title">Skills & Expertise</h2>
+            <p class="section-desc">Specialized domains powering secure digital infrastructure</p>
+            
+            <!-- Statistics Row -->
+            <div class="capabilities-stats-row">
+              <div class="stat-item">
+                <span class="stat-num">04</span>
+                <span class="stat-lbl">Domains</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-num">28+</span>
+                <span class="stat-lbl">Skills</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-num">12+</span>
+                <span class="stat-lbl">Tools Built</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-num">Multiple</span>
+                <span class="stat-lbl">Projects</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Capability Status Monitor -->
+          <div class="status-monitor">
+            <div class="monitor-header">
+              <span class="monitor-title">Active Domains</span>
+              <span class="monitor-pulse-rate">SYS OK // 60Hz</span>
+            </div>
+            <div class="monitor-grid">
+              <div class="monitor-item">
+                <span class="monitor-label">Cybersecurity</span>
+                <span class="monitor-dot active"></span>
+              </div>
+              <div class="monitor-item">
+                <span class="monitor-label">Python Development</span>
+                <span class="monitor-dot active"></span>
+              </div>
+              <div class="monitor-item">
+                <span class="monitor-label">AI Automation</span>
+                <span class="monitor-dot active"></span>
+              </div>
+              <div class="monitor-item">
+                <span class="monitor-label">Product Operations</span>
+                <span class="monitor-dot active"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Cybersecurity -->
+          <div class="skill-card" data-reveal>
+            <!-- Animated Connection Line -->
+            <div class="grid-connector conn-to-next">
+              <span class="conn-pulse"></span>
+            </div>
+            <div class="skill-card-sweep"></div>
+            <div class="skill-card-accent"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </div>
+              <div class="skill-header-text">
+                <h3 class="skill-domain">Cybersecurity</h3>
+                <span class="skill-status"><span class="status-indicator"></span>Active Domain</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag" data-tooltip="Perimeter defense & threat mitigation">Network Security</span>
+              <span class="skill-tag" data-tooltip="Analyzing software defects & security bugs">Vulnerability Research</span>
+              <span class="skill-tag" data-tooltip="SIEM, SOC & real-time monitoring">Threat Monitoring</span>
+              <span class="skill-tag" data-tooltip="Hardening servers & network devices">Infrastructure Protection</span>
+              <span class="skill-tag" data-tooltip="Writing custom defensive scripting">Security Tool Development</span>
+            </div>
+            <div class="skill-metric">
+              <span class="metric-value">5</span>
+              <span class="metric-label">Core Competencies</span>
+            </div>
+          </div>
+
+          <!-- Python Development -->
+          <div class="skill-card" data-reveal>
+            <!-- Animated Connection Line -->
+            <div class="grid-connector conn-to-next">
+              <span class="conn-pulse"></span>
+            </div>
+            <div class="skill-card-sweep"></div>
+            <div class="skill-card-accent"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+                </svg>
+              </div>
+              <div class="skill-header-text">
+                <h3 class="skill-domain">Python Development</h3>
+                <span class="skill-status"><span class="status-indicator"></span>Core Expertise</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag" data-tooltip="Streamlining repetitive workflow pipelines">Automation Scripts</span>
+              <span class="skill-tag" data-tooltip="Building GUI tools using PyQt/Tkinter">Desktop Applications</span>
+              <span class="skill-tag" data-tooltip="Connecting third-party web services & data">API Integrations</span>
+              <span class="skill-tag" data-tooltip="Parsing, transforming & analyzing large logs">Data Processing</span>
+              <span class="skill-tag" data-tooltip="Developing automated scanning utilities">Custom Security Tools</span>
+            </div>
+            <div class="skill-metric">
+              <span class="metric-value">12+</span>
+              <span class="metric-label">Tools Built</span>
+            </div>
+          </div>
+
+          <!-- AI Automation -->
+          <div class="skill-card" data-reveal>
+            <!-- Animated Connection Line -->
+            <div class="grid-connector conn-to-next">
+              <span class="conn-pulse"></span>
+            </div>
+            <div class="skill-card-sweep"></div>
+            <div class="skill-card-accent"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                </svg>
+              </div>
+              <div class="skill-header-text">
+                <h3 class="skill-domain">AI Automation</h3>
+                <span class="skill-status"><span class="status-indicator"></span>Specialized Area</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag" data-tooltip="Architecting intelligent multi-step flows">AI Workflows</span>
+              <span class="skill-tag" data-tooltip="Creating autonomous AI task workers">Agent Development</span>
+              <span class="skill-tag" data-tooltip="Optimizing LLM response accuracy">Prompt Engineering</span>
+              <span class="skill-tag" data-tooltip="Connecting models to data ingestion systems">Automation Pipelines</span>
+              <span class="skill-tag" data-tooltip="Embedding model endpoints in custom applications">LLM Integration</span>
+              <span class="skill-tag" data-tooltip="Automating team operations with AI">AI Productivity Systems</span>
+            </div>
+            <div class="skill-metric">
+              <span class="metric-value">6</span>
+              <span class="metric-label">Active Capabilities</span>
+            </div>
+          </div>
+
+          <!-- Product Operations -->
+          <div class="skill-card" data-reveal>
+            <div class="skill-card-sweep"></div>
+            <div class="skill-card-accent"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                  <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>
+                </svg>
+              </div>
+              <div class="skill-header-text">
+                <h3 class="skill-domain">Product Operations</h3>
+                <span class="skill-status"><span class="status-indicator"></span>Active Domain</span>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag" data-tooltip="Maximizing pipeline delivery speed">Workflow Optimization</span>
+              <span class="skill-tag" data-tooltip="Troubleshooting critical customer issues">Product Support</span>
+              <span class="skill-tag" data-tooltip="Standardizing SOPs and task flows">Process Management</span>
+              <span class="skill-tag" data-tooltip="Aligning engineering & business units">Cross-Functional Collaboration</span>
+              <span class="skill-tag" data-tooltip="Maintaining high-quality delivery standards">Operational Excellence</span>
+            </div>
+            <div class="skill-metric">
+              <span class="metric-value">5</span>
+              <span class="metric-label">Operational Domains</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="global-footer">
+      <div class="footer-container">
+        <!-- Brand / Identity -->
+        <div class="footer-brand">
+          <div class="footer-logo">HARSH</div>
+          <p class="footer-desc">
+            Cybersecurity Researcher & Security Tool Developer. Securing digital infrastructure across connected networks.
+          </p>
+          <div class="footer-sysinfo">
+            <div class="sys-indicator">
+              <span class="pulse-dot"></span>
+              <span>SYSTEM STATUS: OPERATIONAL</span>
+            </div>
+            <div>TRANSMISSION: SECURE (AES-256)</div>
+            <div>ROUTING NODE: harsh-portfolio-website.vercel.app</div>
+          </div>
+        </div>
+
+        <!-- Navigation Columns -->
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Console Links</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="index.html#home">Home</a></li>
+            <li class="footer-link-item"><a href="about.html">About</a></li>
+            <li class="footer-link-item"><a href="skills.html">Skills</a></li>
+            <li class="footer-link-item"><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Routing Nodes</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="experience.html">Experience</a></li>
+            <li class="footer-link-item"><a href="certifications.html">Certifications</a></li>
+            <li class="footer-link-item"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 HARSH. ALL RIGHTS RESERVED.
+        </div>
+        <div class="footer-meta-stats">
+          <span>LATENCY: 14ms | LOC: VSI_NODE_IND</span>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

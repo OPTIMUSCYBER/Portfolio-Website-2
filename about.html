@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://unpkg.com https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formsubmit.co https://unpkg.com; frame-src 'self';">
+    <meta name="description" content="Harsh — Cybersecurity Researcher & Security Tool Developer. Learn more about my focus and mission." />
+    <title>Harsh | About Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body>
+    <!-- Three.js Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+      <div class="logo">H</div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- About Me Section -->
+    <section class="about-section" id="about" style="padding-top: 100px; min-height: 100vh;">
+      <!-- Section Atmosphere -->
+      <div class="skills-atmosphere">
+        <div class="atmosphere-haze" style="top: 25%;"></div>
+        <div class="atmosphere-grid"></div>
+        <div class="skills-particles">
+          <div class="s-particle p1" style="animation-delay: 0s;"></div>
+          <div class="s-particle p2" style="animation-delay: 2s;"></div>
+          <div class="s-particle p3" style="animation-delay: 4s;"></div>
+          <div class="s-particle p4" style="animation-delay: 1s;"></div>
+          <div class="s-particle p5" style="animation-delay: 3s;"></div>
+        </div>
+      </div>
+
+      <div class="about-inner">
+        <div class="section-header">
+          <div class="section-header-left">
+            <span class="section-label">Identity Overview</span>
+            <h2 class="section-title" style="font-size: 3.6rem; text-transform: uppercase;">ABOUT ME</h2>
+            <p class="section-desc">Cybersecurity • Python Development • AI Automation • Product Operations</p>
+          </div>
+        </div>
+
+        <!-- Personal Metrics Strip -->
+        <div class="about-metrics-strip">
+          <div class="ops-item">
+            <span class="ops-label">Core Domains</span>
+            <span class="ops-value">04 <span class="ops-indicator active-pulse"></span></span>
+          </div>
+          <div class="ops-divider"></div>
+          <div class="ops-item">
+            <span class="ops-label">Tools Built</span>
+            <span class="ops-value">12+</span>
+          </div>
+          <div class="ops-divider"></div>
+          <div class="ops-item">
+            <span class="ops-label">Security Focus</span>
+            <span class="ops-value">Multiple Security Projects</span>
+          </div>
+          <div class="ops-divider"></div>
+          <div class="ops-item">
+            <span class="ops-label">Automation Focus</span>
+            <span class="ops-value">AI & Automation Focused</span>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Side: Cyber Intelligence Core & Status Panel -->
+          <div class="about-left" data-reveal>
+            <div class="cyber-core-wrapper">
+              <div class="preview-corners">
+                <div class="corner c-top-left"></div>
+                <div class="corner c-top-right"></div>
+                <div class="corner c-bottom-left"></div>
+                <div class="corner c-bottom-right"></div>
+              </div>
+              <div class="cyber-core-svg">
+                <svg width="100%" height="320" viewBox="0 0 400 320">
+                  <!-- Orbit tracks -->
+                  <circle cx="200" cy="160" r="45" fill="none" stroke="rgba(127,219,255,0.06)" stroke-width="1.5" />
+                  <circle cx="200" cy="160" r="110" fill="none" stroke="rgba(127,219,255,0.04)" stroke-width="1" stroke-dasharray="4 4" class="orbit-ring-outer" />
+                  
+                  <!-- Connections -->
+                  <path class="core-conn-line line-c1" d="M200 160 L100 70" stroke="rgba(127,219,255,0.12)" stroke-width="1" stroke-dasharray="3 3" />
+                  <path class="core-conn-line line-c2" d="M200 160 L300 70" stroke="rgba(127,219,255,0.12)" stroke-width="1" stroke-dasharray="3 3" />
+                  <path class="core-conn-line line-c3" d="M200 160 L100 250" stroke="rgba(127,219,255,0.12)" stroke-width="1" stroke-dasharray="3 3" />
+                  <path class="core-conn-line line-c4" d="M200 160 L300 250" stroke="rgba(127,219,255,0.12)" stroke-width="1" stroke-dasharray="3 3" />
+
+                  <!-- Pulses -->
+                  <circle class="core-pulse-dot p-c1" r="3.5" fill="var(--ice-blue)" />
+                  <circle class="core-pulse-dot p-c2" r="3.5" fill="var(--ice-blue)" />
+                  <circle class="core-pulse-dot p-c3" r="3.5" fill="var(--ice-blue)" />
+                  <circle class="core-pulse-dot p-c4" r="3.5" fill="var(--ice-blue)" />
+
+                  <!-- Satellite Domain Nodes -->
+                  <g class="core-sat-node sat-c1 js-node-cyber" transform="translate(100, 70)">
+                    <circle r="8" fill="rgba(5, 10, 18, 0.95)" stroke="var(--accent-blue)" stroke-width="1.5" />
+                    <circle class="sat-pulse-ring" r="14" fill="none" stroke="var(--accent-blue)" stroke-width="0.75" />
+                    <text y="-14" text-anchor="middle" class="core-node-label">CYBERSECURITY</text>
+                  </g>
+                  <g class="core-sat-node sat-c2 js-node-python" transform="translate(300, 70)">
+                    <circle r="8" fill="rgba(5, 10, 18, 0.95)" stroke="var(--accent-blue)" stroke-width="1.5" />
+                    <circle class="sat-pulse-ring" r="14" fill="none" stroke="var(--accent-blue)" stroke-width="0.75" />
+                    <text y="-14" text-anchor="middle" class="core-node-label">PYTHON DEV</text>
+                  </g>
+                  <g class="core-sat-node sat-c3 js-node-ai" transform="translate(100, 250)">
+                    <circle r="8" fill="rgba(5, 10, 18, 0.95)" stroke="var(--accent-blue)" stroke-width="1.5" />
+                    <circle class="sat-pulse-ring" r="14" fill="none" stroke="var(--accent-blue)" stroke-width="0.75" />
+                    <text y="22" text-anchor="middle" class="core-node-label">AI AUTO</text>
+                  </g>
+                  <g class="core-sat-node sat-c4 js-node-ops" transform="translate(300, 250)">
+                    <circle r="8" fill="rgba(5, 10, 18, 0.95)" stroke="var(--accent-blue)" stroke-width="1.5" />
+                    <circle class="sat-pulse-ring" r="14" fill="none" stroke="var(--accent-blue)" stroke-width="0.75" />
+                    <text y="22" text-anchor="middle" class="core-node-label">PRODUCT OPS</text>
+                  </g>
+
+                  <!-- Central Hub -->
+                  <g class="core-central-hub" transform="translate(200, 160)">
+                    <circle class="core-breathing-glow" r="32" fill="rgba(127, 219, 255, 0.04)" />
+                    <circle r="26" fill="rgba(3, 6, 12, 0.98)" stroke="var(--accent-blue)" stroke-width="1.5" />
+                    <circle class="core-orbit-ring" r="34" fill="none" stroke="var(--accent-blue)" stroke-width="0.5" stroke-dasharray="3 3" />
+                    <text y="5" text-anchor="middle" class="core-central-text">HARSH</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Profile Status Panel -->
+            <div class="profile-status-panel">
+              <div class="panel-header">
+                <span class="panel-title">Profile Status</span>
+                <span class="panel-status status-active">
+                  <span class="status-indicator"></span>ACTIVE
+                </span>
+              </div>
+              <div class="panel-console">
+                <div class="console-line"><span class="c-bullet"></span>Cybersecurity Focus Online</div>
+                <div class="console-line"><span class="c-bullet"></span>AI Automation Active</div>
+                <div class="console-line"><span class="c-bullet"></span>Infrastructure Monitoring</div>
+                <div class="console-line"><span class="c-bullet"></span>Continuous Learning Enabled</div>
+              </div>
+              <div class="panel-footer">
+                <span class="footer-meta">System Integrity: 100%</span>
+                <span class="footer-meta">Last Sync: Real-Time</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: Biography & Profile Cards -->
+          <div class="about-right" data-reveal>
+            <div class="about-who-i-am">
+              <h3 class="about-subheading">Who I Am</h3>
+              <p class="about-bio-text">B.Tech student specializing in Cybersecurity, Python Development, AI Automation, and Product Operations.</p>
+              <p class="about-bio-text">Focused on building security tools, intelligent automation systems, and scalable digital solutions that solve real-world challenges.</p>
+              <p class="about-bio-text">Experienced in developing cybersecurity applications, workflow automation systems, and AI-powered platforms.</p>
+              <p class="about-bio-text">Passionate about protecting digital infrastructure, exploring emerging technologies, and continuously improving through hands-on development and research.</p>
+            </div>
+
+            <div class="profile-cards-grid">
+              <!-- Education -->
+              <div class="profile-info-card">
+                <div class="card-sweep"></div>
+                <div class="card-title-box">
+                  <span class="card-icon">🎓</span>
+                  <h4>Education</h4>
+                </div>
+                <div class="card-chips">
+                  <span class="info-chip">B.Tech Student</span>
+                  <span class="info-chip">Computer Science & Engineering</span>
+                </div>
+              </div>
+
+              <!-- Focus Areas -->
+              <div class="profile-info-card">
+                <div class="card-sweep"></div>
+                <div class="card-title-box">
+                  <span class="card-icon">🎯</span>
+                  <h4>Focus Areas</h4>
+                </div>
+                <div class="card-chips">
+                  <span class="info-chip">Cybersecurity</span>
+                  <span class="info-chip">Python Development</span>
+                  <span class="info-chip">AI Automation</span>
+                  <span class="info-chip">Product Operations</span>
+                </div>
+              </div>
+
+              <!-- Current Interests -->
+              <div class="profile-info-card">
+                <div class="card-sweep"></div>
+                <div class="card-title-box">
+                  <span class="card-icon">⚡</span>
+                  <h4>Current Interests</h4>
+                </div>
+                <div class="card-chips">
+                  <span class="info-chip">Security Research</span>
+                  <span class="info-chip">AI Agents</span>
+                  <span class="info-chip">Automation Systems</span>
+                  <span class="info-chip">Infrastructure Protection</span>
+                  <span class="info-chip">Digital Innovation</span>
+                </div>
+              </div>
+
+              <!-- Mission -->
+              <div class="profile-info-card">
+                <div class="card-sweep"></div>
+                <div class="card-title-box">
+                  <span class="card-icon">🛡️</span>
+                  <h4>Mission</h4>
+                </div>
+                <p class="mission-text">Building secure, intelligent, and scalable systems that solve real-world challenges and create meaningful impact.</p>
+              </div>
+            </div>
+
+            <!-- Capability Indicators -->
+            <div class="capability-indicators-strip">
+              <div class="cap-indicator">
+                <span class="indicator-dot pulse-active"></span>
+                <span class="indicator-lbl">Cybersecurity Active</span>
+              </div>
+              <div class="cap-indicator">
+                <span class="indicator-dot pulse-active"></span>
+                <span class="indicator-lbl">Python Development Active</span>
+              </div>
+              <div class="cap-indicator">
+                <span class="indicator-dot pulse-active"></span>
+                <span class="indicator-lbl">AI Automation Active</span>
+              </div>
+              <div class="cap-indicator">
+                <span class="indicator-dot pulse-active"></span>
+                <span class="indicator-lbl">Product Operations Active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="global-footer">
+      <div class="footer-container">
+        <!-- Brand / Identity -->
+        <div class="footer-brand">
+          <div class="footer-logo">HARSH</div>
+          <p class="footer-desc">
+            Cybersecurity Researcher & Security Tool Developer. Securing digital infrastructure across connected networks.
+          </p>
+          <div class="footer-sysinfo">
+            <div class="sys-indicator">
+              <span class="pulse-dot"></span>
+              <span>SYSTEM STATUS: OPERATIONAL</span>
+            </div>
+            <div>TRANSMISSION: SECURE (AES-256)</div>
+            <div>ROUTING NODE: harsh-portfolio-website.vercel.app</div>
+          </div>
+        </div>
+
+        <!-- Navigation Columns -->
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Console Links</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="index.html#home">Home</a></li>
+            <li class="footer-link-item"><a href="about.html">About</a></li>
+            <li class="footer-link-item"><a href="skills.html">Skills</a></li>
+            <li class="footer-link-item"><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Routing Nodes</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="experience.html">Experience</a></li>
+            <li class="footer-link-item"><a href="certifications.html">Certifications</a></li>
+            <li class="footer-link-item"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 HARSH. ALL RIGHTS RESERVED.
+        </div>
+        <div class="footer-meta-stats">
+          <span>LATENCY: 14ms | LOC: VSI_NODE_IND</span>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

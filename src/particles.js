@@ -37,9 +37,11 @@ function createNebulaTexture(color1, color2) {
 }
 
 export function initParticles() {
+  const isMobile = window.innerWidth < 768;
+
   // ─── LAYER 1: BACKGROUND STARS (distant, tiny, slow) ───────
   const bgGroup = new THREE.Group();
-  const bgCount = 3000;
+  const bgCount = isMobile ? 1000 : 3000;
   const bgGeo = new THREE.BufferGeometry();
   const bgPos = new Float32Array(bgCount * 3);
 
@@ -60,7 +62,7 @@ export function initParticles() {
 
   // ─── LAYER 2: MIDGROUND DUST (ice-blue, random drift) ──────
   const midGroup = new THREE.Group();
-  const midCount = 800;
+  const midCount = isMobile ? 200 : 800;
   const midGeo = new THREE.BufferGeometry();
   const midPos = new Float32Array(midCount * 3);
 
@@ -82,7 +84,7 @@ export function initParticles() {
 
   // ─── LAYER 3: SUBTLE DATA POINTS (tiny, faint, parallax) ────
   const fgGroup = new THREE.Group();
-  const fgCount = 100;
+  const fgCount = isMobile ? 40 : 100;
   const fgGeo = new THREE.BufferGeometry();
   const fgPos = new Float32Array(fgCount * 3);
 
@@ -104,27 +106,29 @@ export function initParticles() {
 
   // ─── LAYER 4: NEBULA HAZE (dark navy/blue-black clouds) ────
   const nebulaGroup = new THREE.Group();
-  const nebulaConfigs = [
-    { x:  8,  y:  2,  z: -15, scale: 28, color1: 'rgba(6,11,20,0.12)',  color2: 'rgba(3,8,16,0.04)' },
-    { x: -6,  y: -4,  z: -20, scale: 35, color1: 'rgba(10,22,40,0.10)', color2: 'rgba(4,10,20,0.03)' },
-    { x:  3,  y:  6,  z: -18, scale: 22, color1: 'rgba(6,11,20,0.08)',  color2: 'rgba(2,5,12,0.02)' },
-    { x: -10, y:  0,  z: -25, scale: 40, color1: 'rgba(8,16,30,0.09)',  color2: 'rgba(3,8,16,0.03)' },
-    { x:  12, y: -5,  z: -22, scale: 30, color1: 'rgba(5,10,18,0.10)',  color2: 'rgba(2,6,14,0.03)' },
-  ];
+  if (!isMobile) {
+    const nebulaConfigs = [
+      { x:  8,  y:  2,  z: -15, scale: 28, color1: 'rgba(6,11,20,0.12)',  color2: 'rgba(3,8,16,0.04)' },
+      { x: -6,  y: -4,  z: -20, scale: 35, color1: 'rgba(10,22,40,0.10)', color2: 'rgba(4,10,20,0.03)' },
+      { x:  3,  y:  6,  z: -18, scale: 22, color1: 'rgba(6,11,20,0.08)',  color2: 'rgba(2,5,12,0.02)' },
+      { x: -10, y:  0,  z: -25, scale: 40, color1: 'rgba(8,16,30,0.09)',  color2: 'rgba(3,8,16,0.03)' },
+      { x:  12, y: -5,  z: -22, scale: 30, color1: 'rgba(5,10,18,0.10)',  color2: 'rgba(2,6,14,0.03)' },
+    ];
 
-  nebulaConfigs.forEach(cfg => {
-    const tex = createNebulaTexture(cfg.color1, cfg.color2);
-    const mat = new THREE.SpriteMaterial({
-      map: tex,
-      transparent: true,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
+    nebulaConfigs.forEach(cfg => {
+      const tex = createNebulaTexture(cfg.color1, cfg.color2);
+      const mat = new THREE.SpriteMaterial({
+        map: tex,
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      });
+      const sprite = new THREE.Sprite(mat);
+      sprite.position.set(cfg.x, cfg.y, cfg.z);
+      sprite.scale.set(cfg.scale, cfg.scale, 1);
+      nebulaGroup.add(sprite);
     });
-    const sprite = new THREE.Sprite(mat);
-    sprite.position.set(cfg.x, cfg.y, cfg.z);
-    sprite.scale.set(cfg.scale, cfg.scale, 1);
-    nebulaGroup.add(sprite);
-  });
+  }
 
   return { bgGroup, midGroup, fgGroup, nebulaGroup };
 }

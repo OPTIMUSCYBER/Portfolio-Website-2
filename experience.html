@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://unpkg.com https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formsubmit.co https://unpkg.com; frame-src 'self';">
+    <meta name="description" content="Harsh — Cybersecurity Researcher & Security Tool Developer. View my academic and professional timeline." />
+    <title>Harsh | Experience & Timeline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+    <style>
+      /* --- Custom Experience Styles --- */
+      .exp-timeline {
+        position: relative;
+        padding-left: 30px;
+        margin: 20px 0;
+      }
+      .exp-timeline::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, var(--accent-blue), rgba(127,219,255,0.02));
+      }
+      .exp-item {
+        position: relative;
+        margin-bottom: 45px;
+      }
+      .exp-item::before {
+        content: '';
+        position: absolute;
+        left: -30px;
+        top: 8px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--card-bg);
+        border: 2px solid var(--accent-blue);
+        box-shadow: 0 0 10px var(--accent-blue);
+        z-index: 2;
+        transition: all 0.3s ease;
+      }
+      .exp-item:hover::before {
+        background: var(--ice-blue);
+        box-shadow: 0 0 15px var(--ice-blue);
+        transform: scale(1.15);
+      }
+      .exp-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 8px;
+        padding: 24px 28px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      .exp-card:hover {
+        border-color: rgba(127, 219, 255, 0.22);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      }
+      .exp-date {
+        font-family: var(--font-primary);
+        font-size: 0.75rem;
+        color: var(--accent-blue);
+        letter-spacing: 0.1em;
+        margin-bottom: 6px;
+        display: block;
+      }
+      .exp-title {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--text-primary);
+        margin-bottom: 4px;
+      }
+      .exp-subtitle {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        margin-bottom: 14px;
+        font-weight: 300;
+      }
+      .exp-desc {
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: rgba(255,255,255,0.7);
+      }
+      .exp-highlights {
+        margin-top: 12px;
+        padding-left: 16px;
+        list-style: none;
+      }
+      .exp-highlights li {
+        font-size: 0.78rem;
+        color: var(--text-secondary);
+        position: relative;
+        margin-bottom: 6px;
+        line-height: 1.5;
+      }
+      .exp-highlights li::before {
+        content: '';
+        position: absolute;
+        left: -14px;
+        top: 6px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent-blue);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Three.js Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+      <div class="logo">H</div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html" class="active">Experience</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Experience Section -->
+    <section class="about-section" id="experience" style="padding-top: 100px; min-height: 100vh;">
+      <!-- Section Atmosphere -->
+      <div class="skills-atmosphere">
+        <div class="atmosphere-haze" style="top: 20%;"></div>
+        <div class="atmosphere-grid"></div>
+      </div>
+
+      <div class="about-inner">
+        <div class="section-header">
+          <div class="section-header-left">
+            <span class="section-label">Operations Timeline</span>
+            <h2 class="section-title" style="font-size: 3.6rem; text-transform: uppercase;">EXPERIENCE</h2>
+            <p class="section-desc">Academic milestones and development track record</p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Column: Work Internships -->
+          <div class="about-left" data-reveal>
+            <h3 class="about-subheading" style="margin-bottom: 25px; border-bottom: 1px solid rgba(127,219,255,0.1); padding-bottom: 10px;">Work Internships</h3>
+            
+            <div class="exp-timeline">
+              <!-- Internship 1: VSI -->
+              <div class="exp-item">
+                <div class="exp-card">
+                  <div class="card-sweep"></div>
+                  <span class="exp-date">OCT. 2025 — PRESENT</span>
+                  <h4 class="exp-title">Assistant Product & QA Associate</h4>
+                  <div class="exp-subtitle">VSI (Virtual Solutions India)</div>
+                  <ul class="exp-highlights">
+                    <li>Supported product-related operations, task coordination, and workflow monitoring.</li>
+                    <li>Assisted in documentation, communication, and execution of assigned product activities.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Internship 2: Tata & Forage -->
+              <div class="exp-item">
+                <div class="exp-card">
+                  <div class="card-sweep"></div>
+                  <span class="exp-date">JUN. 2025</span>
+                  <h4 class="exp-title">Cybersecurity Analyst</h4>
+                  <div class="exp-subtitle">Tata & Forage (Virtual Internship)</div>
+                  <ul class="exp-highlights">
+                    <li>Worked on Identity and Access Management (IAM) simulation tasks and analyzed enterprise security risks.</li>
+                    <li>Proposed mitigation strategies for access-related vulnerabilities.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Internship 3: Nimble Robotics -->
+              <div class="exp-item">
+                <div class="exp-card">
+                  <div class="card-sweep"></div>
+                  <span class="exp-date">SEPT. 2024 — JUN. 2025</span>
+                  <h4 class="exp-title">Telereporter — Robotics Monitoring</h4>
+                  <div class="exp-subtitle">VSI (Virtual Solutions India) — Nimble Robotics</div>
+                  <ul class="exp-highlights">
+                    <li>Monitored robotic operations and identified technical anomalies.</li>
+                    <li>Prepared operational reports supporting smooth system performance.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Extra Curricular Activities -->
+          <div class="about-right" data-reveal>
+            <h3 class="about-subheading" style="margin-bottom: 25px; border-bottom: 1px solid rgba(127,219,255,0.1); padding-bottom: 10px;">Extra Curricular Activities</h3>
+            
+            <div class="exp-timeline">
+              <!-- Item 1: HackSwitch -->
+              <div class="exp-item">
+                <div class="exp-card">
+                  <div class="card-sweep"></div>
+                  <span class="exp-date">APR 7, 2026</span>
+                  <h4 class="exp-title">HackSwitch Hackathon</h4>
+                  <div class="exp-subtitle">Gateway Education, Sonipat (AI/ML Club)</div>
+                  <p class="exp-desc">Secured 2nd position in the intense 6-hour hackathon focused on AI/ML applications.</p>
+                </div>
+              </div>
+
+              <!-- Item 2: CodeXccelerate -->
+              <div class="exp-item">
+                <div class="exp-card">
+                  <div class="card-sweep"></div>
+                  <span class="exp-date">APR 23 — 25, 2025</span>
+                  <h4 class="exp-title">CodeXccelerate 72-Hour Hackathon</h4>
+                  <div class="exp-subtitle">Gateway Education, in association with ImaginXP & CollegeDekho</div>
+                  <p class="exp-desc">Participated with team Tech Beats in the 72-hour development sprint.</p>
+                </div>
+              </div>
+
+              <!-- Item 3: Hack Helix 2026 -->
+              <div class="exp-item">
+                <div class="exp-card">
+                  <div class="card-sweep"></div>
+                  <span class="exp-date">2026</span>
+                  <h4 class="exp-title">Hack Helix 2026</h4>
+                  <div class="exp-subtitle">Thapar Institute of Engineering and Technology</div>
+                  <p class="exp-desc">Participated in building security solutions with team Cyber Alias.</p>
+                </div>
+              </div>
+
+              <!-- Item 4: Green Cap Ideathon -->
+              <div class="exp-item">
+                <div class="exp-card">
+                  <div class="card-sweep"></div>
+                  <span class="exp-date">2025</span>
+                  <h4 class="exp-title">Green Cap Ideathon</h4>
+                  <div class="exp-subtitle">Netaji Subhas University of Technology (NSUT)</div>
+                  <p class="exp-desc">Developed and pitched sustainable computing and eco-friendly tech concepts.</p>
+                </div>
+              </div>
+
+              <!-- Item 5: National Conference -->
+              <div class="exp-item">
+                <div class="exp-card">
+                  <div class="card-sweep"></div>
+                  <span class="exp-date">2025</span>
+                  <h4 class="exp-title">2nd Multidisciplinary National Conference</h4>
+                  <div class="exp-subtitle">National Conference</div>
+                  <p class="exp-desc">Participated in research presentations and panel discussions on multidisciplinary tech trends.</p>
+                </div>
+              </div>
+
+              <!-- Item 6: ATAL Academy & IDEA Lab Workshop -->
+              <div class="exp-item">
+                <div class="exp-card">
+                  <div class="card-sweep"></div>
+                  <span class="exp-date">NOV 8, 2023</span>
+                  <h4 class="exp-title">ATAL Academy & IDEA Lab Workshop</h4>
+                  <div class="exp-subtitle">Deenbandhu Chhotu Ram University of Science and Technology (DCRUST), Murthal</div>
+                  <p class="exp-desc">Completed AICTE-sponsored Skilling Workshop focusing on advanced technology prototyping.</p>
+                </div>
+              </div>
+
+              <!-- Item 7: NSS Merit Certificate -->
+              <div class="exp-item">
+                <div class="exp-card">
+                  <div class="card-sweep"></div>
+                  <span class="exp-date">APR 2021 — MAR 2023</span>
+                  <h4 class="exp-title">NSS Volunteer (Merit Certificate)</h4>
+                  <div class="exp-subtitle">Govt. Model Sanskriti School (Ministry of Youth Affairs & Sports, Govt. of India)</div>
+                  <p class="exp-desc">Rendered social service, coordinated health camps, and organized environmental awareness drives.</p>
+                </div>
+              </div>
+
+              <!-- Item 8: Scouts & Guides Training Camp -->
+              <div class="exp-item">
+                <div class="exp-card">
+                  <div class="card-sweep"></div>
+                  <span class="exp-date">NOV 17 — 22, 2017</span>
+                  <h4 class="exp-title">Hindustan Scouts & Guides Training Camp</h4>
+                  <div class="exp-subtitle">Hindustan Scouts & Guides, Haryana State</div>
+                  <p class="exp-desc">Completed comprehensive Scout training camp, receiving Excellent remarks for team leadership and outdoor skills.</p>
+                </div>
+              </div>
+
+              <!-- Item 9: Republic Day Celebration -->
+              <div class="exp-item">
+                <div class="exp-card">
+                  <div class="card-sweep"></div>
+                  <span class="exp-date">JAN 26, 2018</span>
+                  <h4 class="exp-title">Republic Day Celebration</h4>
+                  <div class="exp-subtitle">District Administration, Sonipat</div>
+                  <p class="exp-desc">Received Certificate of Participation for representing secondary school cohort in district parade events.</p>
+                </div>
+              </div>
+
+              <!-- Item 10: Independence Day Celebration -->
+              <div class="exp-item">
+                <div class="exp-card">
+                  <div class="card-sweep"></div>
+                  <span class="exp-date">AUG 15, 2018</span>
+                  <h4 class="exp-title">Independence Day Celebration</h4>
+                  <div class="exp-subtitle">District Administration, Sonipat</div>
+                  <p class="exp-desc">Received Certificate of Participation in official district administration celebrations.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="global-footer">
+      <div class="footer-container">
+        <!-- Brand / Identity -->
+        <div class="footer-brand">
+          <div class="footer-logo">HARSH</div>
+          <p class="footer-desc">
+            Cybersecurity Researcher & Security Tool Developer. Securing digital infrastructure across connected networks.
+          </p>
+          <div class="footer-sysinfo">
+            <div class="sys-indicator">
+              <span class="pulse-dot"></span>
+              <span>SYSTEM STATUS: OPERATIONAL</span>
+            </div>
+            <div>TRANSMISSION: SECURE (AES-256)</div>
+            <div>ROUTING NODE: harsh-portfolio-website.vercel.app</div>
+          </div>
+        </div>
+
+        <!-- Navigation Columns -->
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Console Links</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="index.html#home">Home</a></li>
+            <li class="footer-link-item"><a href="about.html">About</a></li>
+            <li class="footer-link-item"><a href="skills.html">Skills</a></li>
+            <li class="footer-link-item"><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Routing Nodes</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="experience.html">Experience</a></li>
+            <li class="footer-link-item"><a href="certifications.html">Certifications</a></li>
+            <li class="footer-link-item"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 HARSH. ALL RIGHTS RESERVED.
+        </div>
+        <div class="footer-meta-stats">
+          <span>LATENCY: 14ms | LOC: VSI_NODE_IND</span>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

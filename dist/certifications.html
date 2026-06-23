@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://unpkg.com https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formsubmit.co https://unpkg.com; frame-src 'self';">
+    <meta name="description" content="Harsh — Cybersecurity Researcher & Security Tool Developer. View my professional certifications." />
+    <title>Harsh | Certifications</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+      /* --- Custom Certifications Styles --- */
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-top: 30px;
+      }
+      .cert-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 10px;
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .cert-card:hover {
+        border-color: rgba(127, 219, 255, 0.22);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 24px rgba(127,219,255,0.06);
+      }
+      .cert-icon-box {
+        background: rgba(127,219,255,0.06);
+        border: 1px solid rgba(127,219,255,0.2);
+        border-radius: 8px;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .cert-info {
+        flex-grow: 1;
+      }
+      .cert-issuer {
+        font-family: var(--font-primary);
+        font-size: 0.72rem;
+        color: var(--accent-blue);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+        display: block;
+      }
+      .cert-name {
+        font-size: 1.15rem;
+        font-weight: 400;
+        color: var(--text-primary);
+        margin-bottom: 6px;
+      }
+      .cert-id {
+        font-family: monospace;
+        font-size: 0.72rem;
+        color: var(--text-secondary);
+        opacity: 0.6;
+        margin-bottom: 12px;
+        display: block;
+      }
+      .cert-desc {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: rgba(255,255,255,0.65);
+      }
+      @media (max-width: 768px) {
+        .cert-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/vendor-gsap-BMHLB6Su.js"></script>
+    <script type="module" crossorigin src="/assets/vendor-three-ISnV9lSh.js"></script>
+    <script type="module" crossorigin src="/assets/main-BxH8ZCp1.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-CekenoVr.css">
+  </head>
+  <body>
+    <!-- Three.js Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+      <div class="logo">H</div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="certifications.html" class="active">Certifications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Certifications Section -->
+    <section class="about-section" id="certifications" style="padding-top: 100px; min-height: 100vh;">
+      <!-- Section Atmosphere -->
+      <div class="skills-atmosphere">
+        <div class="atmosphere-haze" style="top: 30%;"></div>
+        <div class="atmosphere-grid"></div>
+      </div>
+
+      <div class="about-inner">
+        <div class="section-header">
+          <div class="section-header-left">
+            <span class="section-label">Verified Credentials</span>
+            <h2 class="section-title" style="font-size: 3.6rem; text-transform: uppercase;">CERTIFICATIONS</h2>
+            <p class="section-desc">Professional security and software engineering certifications</p>
+          </div>
+        </div>
+
+        <div class="cert-grid">
+          <!-- Cert 1 -->
+          <div class="cert-card" data-reveal>
+            <div class="card-sweep"></div>
+            <div class="cert-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer">Cybrary</span>
+              <h3 class="cert-name">Penetration Testing Professional</h3>
+              <span class="cert-id">Issued: 2025</span>
+              <p class="cert-desc">Advanced penetration testing training validating offensive security concepts, methodology, vulnerability exploitation, and network security auditing.</p>
+            </div>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="cert-card" data-reveal>
+            <div class="card-sweep"></div>
+            <div class="cert-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="1.5">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer">Udemy</span>
+              <h3 class="cert-name">Burp Suite Mastery: From Beginner to Advanced</h3>
+              <span class="cert-id">Issued: June, 2026</span>
+              <p class="cert-desc">Comprehensive mastery of Burp Suite Professional toolset, web application scanning, manual testing, intercepting proxies, and advanced penetration testing techniques.</p>
+            </div>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="cert-card" data-reveal>
+            <div class="card-sweep"></div>
+            <div class="cert-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="1.5">
+                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+              </svg>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer">Udemy</span>
+              <h3 class="cert-name">Network Security: Mastering Cybersecurity, Ethical Hacking</h3>
+              <span class="cert-id">Issued: March 26, 2025</span>
+              <p class="cert-desc">Detailed practical validation of network security principles, ethical hacking techniques, packet monitoring, firewall engineering, and defense configurations.</p>
+            </div>
+          </div>
+
+          <!-- Cert 4 -->
+          <div class="cert-card" data-reveal>
+            <div class="card-sweep"></div>
+            <div class="cert-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="1.5">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer">Udemy</span>
+              <h3 class="cert-name">Executive Diploma in Business Management</h3>
+              <span class="cert-id">Issued: June, 2026</span>
+              <p class="cert-desc">Management framework training covering corporate strategy, product operations, workflow optimization, leadership principles, and business development foundations.</p>
+            </div>
+          </div>
+
+          <!-- Cert 5 -->
+          <div class="cert-card" data-reveal>
+            <div class="card-sweep"></div>
+            <div class="cert-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer">Udemy</span>
+              <h3 class="cert-name">Agentic AI - Risk & Cybersecurity Masterclass</h3>
+              <span class="cert-id">Issued: 2025</span>
+              <p class="cert-desc">Evaluates AI-powered agent risks, autonomous pipeline vulnerabilities, LLM security auditing, prompt injections, and mitigation frameworks for AI architectures.</p>
+            </div>
+          </div>
+
+          <!-- Cert 6 -->
+          <div class="cert-card" data-reveal>
+            <div class="card-sweep"></div>
+            <div class="cert-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 16v-4M12 8h.01"/>
+              </svg>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer">Udemy</span>
+              <h3 class="cert-name">Ethical Hacking</h3>
+              <span class="cert-id">Issued: 2025</span>
+              <p class="cert-desc">Hands-on assessment of vulnerability identification, custom script automation, network penetration, system exploitation, and remediation engineering.</p>
+            </div>
+          </div>
+
+          <!-- Cert 7 -->
+          <div class="cert-card" data-reveal>
+            <div class="card-sweep"></div>
+            <div class="cert-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="1.5">
+                <path d="M4 17l6-5-6-5M12 19h8"/>
+              </svg>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer">LinkedIn Learning</span>
+              <h3 class="cert-name">Networking Basics</h3>
+              <span class="cert-id">Issued: 2024</span>
+              <p class="cert-desc">Core fundamentals of communication models (OSI, TCP/IP), routing protocols, DNS infrastructure, subnetting, and packet routing operations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="global-footer">
+      <div class="footer-container">
+        <!-- Brand / Identity -->
+        <div class="footer-brand">
+          <div class="footer-logo">HARSH</div>
+          <p class="footer-desc">
+            Cybersecurity Researcher & Security Tool Developer. Securing digital infrastructure across connected networks.
+          </p>
+          <div class="footer-sysinfo">
+            <div class="sys-indicator">
+              <span class="pulse-dot"></span>
+              <span>SYSTEM STATUS: OPERATIONAL</span>
+            </div>
+            <div>TRANSMISSION: SECURE (AES-256)</div>
+            <div>ROUTING NODE: harsh-portfolio-website.vercel.app</div>
+          </div>
+        </div>
+
+        <!-- Navigation Columns -->
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Console Links</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="index.html#home">Home</a></li>
+            <li class="footer-link-item"><a href="about.html">About</a></li>
+            <li class="footer-link-item"><a href="skills.html">Skills</a></li>
+            <li class="footer-link-item"><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Routing Nodes</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="experience.html">Experience</a></li>
+            <li class="footer-link-item"><a href="certifications.html">Certifications</a></li>
+            <li class="footer-link-item"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 HARSH. ALL RIGHTS RESERVED.
+        </div>
+        <div class="footer-meta-stats">
+          <span>LATENCY: 14ms | LOC: VSI_NODE_IND</span>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

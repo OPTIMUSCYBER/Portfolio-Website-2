@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://unpkg.com https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formsubmit.co https://unpkg.com; frame-src 'self';">
+    <meta name="description" content="Harsh — Cybersecurity Researcher & Security Tool Developer. Contact me to secure infrastructure or collaborate." />
+    <title>Harsh | Contact Console</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+      /* --- Custom Contact Styles --- */
+      .contact-console {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 10px;
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        margin-top: 30px;
+        max-width: 650px;
+      }
+      .console-topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(127,219,255,0.1);
+        padding-bottom: 14px;
+        margin-bottom: 24px;
+      }
+      .topbar-indicators {
+        display: flex;
+        gap: 6px;
+      }
+      .indicator-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .indicator-dot.red { background: rgba(255, 95, 87, 0.8); }
+      .indicator-dot.yellow { background: rgba(254, 188, 46, 0.8); }
+      .indicator-dot.green { background: rgba(40, 200, 64, 0.8); }
+      
+      .topbar-title {
+        font-family: monospace;
+        font-size: 0.72rem;
+        color: var(--accent-blue);
+        letter-spacing: 0.15em;
+      }
+
+      .console-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .console-prompt-line {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .prompt-label {
+        font-family: monospace;
+        font-size: 0.8rem;
+        color: var(--ice-blue);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .prompt-input, .prompt-textarea {
+        background: rgba(3, 6, 12, 0.9);
+        border: 1px solid rgba(127,219,255,0.15);
+        border-radius: 4px;
+        padding: 12px 14px;
+        font-family: monospace;
+        font-size: 0.85rem;
+        color: var(--text-primary);
+        width: 100%;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+      }
+
+      .prompt-input:focus, .prompt-textarea:focus {
+        outline: none;
+        border-color: var(--accent-blue);
+        box-shadow: 0 0 10px rgba(127,219,255,0.15);
+      }
+
+      .prompt-textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .console-submit-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 24px;
+        background: rgba(127, 219, 255, 0.06);
+        border: 1px solid rgba(127, 219, 255, 0.2);
+        border-radius: 6px;
+        color: var(--accent-blue);
+        font-size: 0.8rem;
+        font-family: monospace;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        align-self: flex-start;
+      }
+
+      .console-submit-btn:hover {
+        background: rgba(127, 219, 255, 0.14);
+        border-color: var(--accent-blue);
+        box-shadow: 0 0 24px rgba(127, 219, 255, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .contact-links-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 10px;
+        padding: 30px;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      .link-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+        text-decoration: none;
+        color: var(--text-primary);
+        transition: all 0.3s ease;
+      }
+
+      .link-item:hover {
+        transform: translateX(4px);
+      }
+
+      .link-icon-box {
+        background: rgba(127,219,255,0.06);
+        border: 1px solid rgba(127,219,255,0.2);
+        border-radius: 6px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent-blue);
+        transition: all 0.3s ease;
+      }
+      .link-item:hover .link-icon-box {
+        background: rgba(127,219,255,0.12);
+        border-color: var(--accent-blue);
+        color: var(--ice-blue);
+        box-shadow: 0 0 14px rgba(127,219,255,0.15);
+      }
+
+      .link-text {
+        display: flex;
+        flex-direction: column;
+      }
+      .link-title {
+        font-size: 0.88rem;
+        font-weight: 400;
+        color: var(--text-primary);
+      }
+      .link-val {
+        font-size: 0.76rem;
+        color: var(--text-secondary);
+        opacity: 0.7;
+        margin-top: 2px;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/vendor-gsap-BMHLB6Su.js"></script>
+    <script type="module" crossorigin src="/assets/vendor-three-ISnV9lSh.js"></script>
+    <script type="module" crossorigin src="/assets/main-BxH8ZCp1.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-CekenoVr.css">
+  </head>
+  <body>
+    <!-- Three.js Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+      <div class="logo">H</div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="about-section" id="contact" style="padding-top: 100px; min-height: 100vh;">
+      <!-- Section Atmosphere -->
+      <div class="skills-atmosphere">
+        <div class="atmosphere-haze" style="top: 25%;"></div>
+        <div class="atmosphere-grid"></div>
+      </div>
+
+      <div class="about-inner">
+        <div class="section-header">
+          <div class="section-header-left">
+            <span class="section-label">Connect & Collaborate</span>
+            <h2 class="section-title" style="font-size: 3.6rem; text-transform: uppercase;">CONTACT CONSOLE</h2>
+            <p class="section-desc">Initiate connection payload or access routing channels</p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Column: Terminal Contact Form -->
+          <div class="about-left" data-reveal>
+            <div class="contact-console">
+              <div class="card-sweep"></div>
+              <div class="console-topbar">
+                <div class="topbar-indicators">
+                  <div class="indicator-dot red"></div>
+                  <div class="indicator-dot yellow"></div>
+                  <div class="indicator-dot green"></div>
+                </div>
+                <div class="topbar-title">SECURE_COMM_SHELL</div>
+                <div></div>
+              </div>
+
+               <form class="console-fields" id="contactForm">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none">
+                <div class="console-prompt-line">
+                  <label class="prompt-label"><span style="color:var(--accent-blue)">harsh@cyber:~#</span> input_name</label>
+                  <input type="text" name="name" id="contactName" class="prompt-input" placeholder="Your Name" required autocomplete="name" />
+                </div>
+
+                <div class="console-prompt-line">
+                  <label class="prompt-label"><span style="color:var(--accent-blue)">harsh@cyber:~#</span> input_email</label>
+                  <input type="email" name="email" id="contactEmail" class="prompt-input" placeholder="Your Email Address" required autocomplete="email" />
+                </div>
+
+                <div class="console-prompt-line">
+                  <label class="prompt-label"><span style="color:var(--accent-blue)">harsh@cyber:~#</span> write_message</label>
+                  <textarea name="message" id="contactMessage" class="prompt-textarea" placeholder="Enter transmission body details..." required></textarea>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                  <button type="submit" class="console-submit-btn">
+                    <span>Transmit Message</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                  </button>
+                  <div id="formStatus" style="font-family: monospace; font-size: 0.76rem; color: var(--accent-blue); display: none; line-height: 1.5;"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right Column: Security Routing Links -->
+          <div class="about-right" data-reveal>
+            <div class="contact-links-card">
+              <div class="card-sweep"></div>
+              <h3 class="about-subheading" style="margin-bottom: 25px; border-bottom: 1px solid rgba(127,219,255,0.1); padding-bottom: 10px;">Operational Nodes</h3>
+              
+              <!-- Email -->
+              <a href="mailto:822005harsh@gmail.com" class="link-item">
+                <div class="link-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <path d="M22 6l-10 7L2 6"/>
+                  </svg>
+                </div>
+                <div class="link-text">
+                  <span class="link-title">Secure Email</span>
+                  <span class="link-val">822005harsh@gmail.com</span>
+                </div>
+              </a>
+
+              <!-- GitHub -->
+              <a href="https://github.com/OPTIMUSCYBER" target="_blank" rel="noopener noreferrer" class="link-item">
+                <div class="link-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                  </svg>
+                </div>
+                <div class="link-text">
+                  <span class="link-title">GitHub System</span>
+                  <span class="link-val">github.com/OPTIMUSCYBER</span>
+                </div>
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://linkedin.com/in/harsh" target="_blank" rel="noopener noreferrer" class="link-item">
+                <div class="link-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/>
+                  </svg>
+                </div>
+                <div class="link-text">
+                  <span class="link-title">LinkedIn Protocol</span>
+                  <span class="link-val">linkedin.com/in/harsh</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="global-footer">
+      <div class="footer-container">
+        <!-- Brand / Identity -->
+        <div class="footer-brand">
+          <div class="footer-logo">HARSH</div>
+          <p class="footer-desc">
+            Cybersecurity Researcher & Security Tool Developer. Securing digital infrastructure across connected networks.
+          </p>
+          <div class="footer-sysinfo">
+            <div class="sys-indicator">
+              <span class="pulse-dot"></span>
+              <span>SYSTEM STATUS: OPERATIONAL</span>
+            </div>
+            <div>TRANSMISSION: SECURE (AES-256)</div>
+            <div>ROUTING NODE: harsh-portfolio-website.vercel.app</div>
+          </div>
+        </div>
+
+        <!-- Navigation Columns -->
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Console Links</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="index.html#home">Home</a></li>
+            <li class="footer-link-item"><a href="about.html">About</a></li>
+            <li class="footer-link-item"><a href="skills.html">Skills</a></li>
+            <li class="footer-link-item"><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Routing Nodes</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="experience.html">Experience</a></li>
+            <li class="footer-link-item"><a href="certifications.html">Certifications</a></li>
+            <li class="footer-link-item"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 HARSH. ALL RIGHTS RESERVED.
+        </div>
+        <div class="footer-meta-stats">
+          <span>LATENCY: 14ms | LOC: VSI_NODE_IND</span>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
