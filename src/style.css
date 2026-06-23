@@ -115,6 +115,33 @@ a, button, .btn, .nav-links li a, .proj-details-btn,
   color: var(--text-primary);
 }
 
+.logo-animated {
+  animation: neon-flicker 2s infinite alternate;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px var(--accent-blue),
+    0 0 40px var(--accent-blue);
+}
+
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px var(--accent-blue),
+      0 0 40px var(--accent-blue);
+  }
+  20%, 24%, 55% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -2926,11 +2953,12 @@ a, button, .btn, .nav-links li a, .proj-details-btn,
   display: none;
   position: fixed;
   top: 20px;
-  right: 20px;
+  left: 20px;
   z-index: 200;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  background: rgba(10, 15, 30, 0.8);
+  border: 1px solid rgba(127, 219, 255, 0.4);
   border-radius: 6px;
+  box-shadow: 0 0 12px rgba(127, 219, 255, 0.3), inset 0 0 6px rgba(127, 219, 255, 0.1);
   width: 44px;
   height: 44px;
   flex-direction: column;
@@ -2948,6 +2976,7 @@ a, button, .btn, .nav-links li a, .proj-details-btn,
   background: var(--text-primary);
   border-radius: 2px;
   transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(127, 219, 255, 0.8);
 }
 .mobile-menu-toggle.active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
@@ -2975,7 +3004,8 @@ a, button, .btn, .nav-links li a, .proj-details-btn,
   }
   .sidebar {
     position: fixed !important;
-    width: 260px;
+    width: 60%;
+    max-width: 320px;
     height: 100vh;
     flex-direction: column;
     padding: 40px 0;
