@@ -3489,6 +3489,32 @@ a, button, .btn, .nav-links li a, .proj-details-btn,
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(40, 200, 64, 0); }
 }
 
+.footer-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.footer-socials a {
+  color: var(--text-secondary);
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(127, 219, 255, 0.05);
+  border: 1px solid rgba(127, 219, 255, 0.1);
+}
+
+.footer-socials a:hover {
+  color: var(--accent-blue);
+  transform: translateY(-3px);
+  background: rgba(127, 219, 255, 0.15);
+  border-color: rgba(127, 219, 255, 0.4);
+}
+
 .footer-links-col {
   display: flex;
   flex-direction: column;
