@@ -2954,7 +2954,7 @@ a, button, .btn, .nav-links li a, .proj-details-btn,
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 200;
+  z-index: 300;
   background: rgba(10, 15, 30, 0.8);
   border: 1px solid rgba(127, 219, 255, 0.4);
   border-radius: 6px;
